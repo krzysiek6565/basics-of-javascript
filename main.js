@@ -22,7 +22,7 @@ function man(obj1){
 
 console.log(man(object1));
 
-//creating the object
+//creating the object one
 const human = Object.create(object1);
 console.log(human);
 
@@ -41,3 +41,32 @@ function factory1(model){
 
 const myCar = factory1('Y');
 console.log(myCar.model);
+
+//createing the object two
+const cat = {
+  legs: 4,
+  eyes: 2,
+  tail: 1,
+  ears: 2
+}
+
+function createCat(){
+  return Object.create(cat, {
+    name:{
+      value: 'Bonifacy'
+    }
+  })
+}
+
+const britishCat = createCat();
+console.log(britishCat);
+
+//creating the object three
+function Vessel(){
+  this.swim = function(){
+    return 'We cruise fast';
+  }
+}
+
+const container = new Vessel();
+console.log(container.swim());
