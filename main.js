@@ -156,8 +156,34 @@ function outt(){
 }
 inn(outt);
 
+//arrow function with event listeners
+document.body.addEventListener('click', () => {
+  console.log(this + 'hej4');
+})
+
 
 //do not use arrow functions with event listeners
 //do not use arrow function for object methods
 //do not use arrow function for prototypes
 //do not use arrow function for constructors
+
+//higher order function
+
+const table = [1, 2, 3, 4, 5, 6];
+console.log(table.filter(n => n > 3));
+
+//closure
+
+function motor(n){
+  const name = n;
+  function sayMotor(){
+    console.log(`This is my ${name}`);
+  }
+
+  return {
+    sayMotor
+  }
+}
+
+const skoda = motor('tdi');
+skoda.sayMotor();
